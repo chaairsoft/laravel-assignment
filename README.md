@@ -71,6 +71,10 @@ reset the queue and clear any stuck or failed jobs.
 
 Usage: Use this command with caution as it will remove all queued jobs and cannot be undone.
 
+### CSV files location
+
+- csv files are located in the path : `public/CSVFiles`
+
 ### Register `event listeners` and `Interfaces binding`.
 
 In method `boot` in the path : `app/Providers/AppServiceProvider.php`
