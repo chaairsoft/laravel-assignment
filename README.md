@@ -2,7 +2,8 @@
 
 ### Prerequisites
 
-List any software or tools required before installation (PHP 8.2, Composer 2).
+Since this project uses `laravel 11` requires `PHP 8.2` or greater, and You need `composer
+2` to manage php packages.
 
 ### Steps
 
@@ -79,7 +80,6 @@ Usage: Use this command with caution as it will remove all queued jobs and canno
 
 In method `boot` in the path : `app/Providers/AppServiceProvider.php`
 
-
 ### Daily Synchronization
 
 The project includes a scheduled task that synchronizes products from the external API every day at 12 AM.
@@ -97,7 +97,6 @@ php artisan schedule:run
 To verify that the cron job is working, you can check the Laravel logs or the output of the command you've scheduled.
 The logs can usually be found in `storage/logs/laravel.log` and in terminal.
 
-
 ### Unit Testing
 
 I created some simple tests to ensure the data is valid.
@@ -109,8 +108,9 @@ in the `tests` directory, providing a summary of the results for each test.
 php artisan test
 ```
 
-Run only the tests in the 'ProductsServiceTest' class. 
-This command uses the `--filter` option to specify that only tests within this particular class should be executed, which can be helpful
+Run only the tests in the 'ProductsServiceTest' class.
+This command uses the `--filter` option to specify that only tests within this particular class should be executed,
+which can be helpful
 for focusing on specific functionality or isolating issues.
 
 ```shell
@@ -120,6 +120,7 @@ php artisan test --filter="ProductsServiceTest"
 Run a specific test method named 'testValidateInteger' within the 'ProductsServiceTest' class.
 This command is useful for debugging or verifying the behavior of a single test without running
 the entire test suite, allowing you to quickly check the implementation of that particular method.
+
 ```shell
 php artisan test --filter="ProductsServiceTest::testValidateInteger"
 ```
