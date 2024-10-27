@@ -9,8 +9,8 @@ List any software or tools required before installation (PHP 8.2, Composer 2).
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
+git clone https://github.com/chaairsoft/laravel-assignment.git
+cd laravel-assignment
 ```
 
 2. Install dependencies:
@@ -45,23 +45,6 @@ php artisan migrate
 php artisan serve
 ```
 
-### Daily Synchronization
-
-The project includes a scheduled task that synchronizes products from the external API every day at 12 AM.
-
-Setting up scheduled tasks you will find them in the path : `routes/console.php`.
-
-1. Run Task Scheduler (Local)
-
-```bash
-php artisan schedule:run
-```
-
-2. Verify Cron Jobs
-
-To verify that the cron job is working, you can check the Laravel logs or the output of the command you've scheduled.
-The logs can usually be found in `storage/logs/laravel.log` and in terminal.
-
 ### Artisan Commands
 
 `php artisan queue:work` : Starts processing jobs on the queue as they are pushed. This command will run continuously
@@ -88,9 +71,27 @@ reset the queue and clear any stuck or failed jobs.
 
 Usage: Use this command with caution as it will remove all queued jobs and cannot be undone.
 
-### Register event listeners and Bind the ProductRepositoryInterface to its concrete implementation, ProductRepository.
+### Register `event listeners` and `Interfaces binding`.
 
-in method `boot` in the path : `app/Providers/AppServiceProvider.php`
+In method `boot` in the path : `app/Providers/AppServiceProvider.php`
+
+
+### Daily Synchronization
+
+The project includes a scheduled task that synchronizes products from the external API every day at 12 AM.
+
+Setting up scheduled tasks you will find them in the path : `routes/console.php`.
+
+1. Run Task Scheduler (Local)
+
+```bash
+php artisan schedule:run
+```
+
+2. Verify Cron Jobs
+
+To verify that the cron job is working, you can check the Laravel logs or the output of the command you've scheduled.
+The logs can usually be found in `storage/logs/laravel.log` and in terminal.
 
 
 ### Unit Testing
